@@ -7,6 +7,7 @@
 * [6kyu](#6kyu)
   * [Numericals of a String](#numericals-of-a-string)
   * [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
+  * [Highest Scoring Word](#highest-scoring-word)
 
 ## 5kyu
 
@@ -173,3 +174,32 @@ function displayBoard(board, width){
 }
 ```
 
+### Highest Scoring Word
+
+Given a string of words, you need to find the highest scoring word.
+
+Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+You need to return the highest scoring word as a string.
+
+If two words score the same, return the word that appears earliest in the original string.
+
+All letters will be lowercase and all inputs will be valid.
+
+#### Solution
+
+```js
+function high(x){
+  let arr = x.split(' ');    
+  let scores = [];    
+  arr.map(w => {    
+    let wordScore = 0;    
+    for(let i = 0; i < w.length; i++) {    
+        wordScore += w[i].charCodeAt() - 96;
+    }    
+    scores.push(wordScore);    
+    wordScore = 0;    
+  });    
+  return arr[scores.indexOf(Math.max(...scores))];  
+}
+```
