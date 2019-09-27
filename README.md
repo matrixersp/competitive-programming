@@ -8,6 +8,7 @@
   * [Numericals of a String](#numericals-of-a-string)
   * [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
   * [Highest Scoring Word](#highest-scoring-word)
+  * [CamelCase Method](#camelcase-method)
 
 ## 5kyu
 
@@ -202,4 +203,23 @@ function high(x){
   });    
   return arr[scores.indexOf(Math.max(...scores))];  
 }
+```
+
+### CamelCase Method
+
+Write simple .camelCase method (camel_case function in PHP, CamelCase in C# or camelCase in Java) for strings. All words must have their first letter capitalized without spaces.
+
+For instance:
+
+```js
+"hello case".camelCase() => HelloCase
+"camel case word".camelCase() => CamelCaseWord
+```
+
+### Solution
+
+```js
+String.prototype.camelCase=function() {    
+    return this.split(' ').map(w => w.slice(0, 1).toUpperCase() + w.slice(1)).join('');     
+}    
 ```
