@@ -1,14 +1,17 @@
 # Codewars Kata Solutions on JavaScript
 
 ## Katas
-* [5kyu](#5kyu)
-  * [Did you mean ...?](#did-you-mean-...?)
-  * [Perimeter of squares in a rectangle](#Perimeter-of-squares-in-a-rectangle)
-* [6kyu](#6kyu)
-  * [Numericals of a String](#numericals-of-a-string)
-  * [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
-  * [Highest Scoring Word](#highest-scoring-word)
-  * [CamelCase Method](#camelcase-method)
+
+- [5kyu](#5kyu)
+  - [Did you mean ...?](#did-you-mean-...?)
+  - [Perimeter of squares in a rectangle](#Perimeter-of-squares-in-a-rectangle)
+- [6kyu](#6kyu)
+  - [Numericals of a String](#numericals-of-a-string)
+  - [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
+  - [Highest Scoring Word](#highest-scoring-word)
+  - [CamelCase Method](#camelcase-method)
+- [7kyu](#7kyu)
+  - [Drying Potatoes](#drying-potatoes)
 
 ## 5kyu
 
@@ -25,18 +28,30 @@ Extend the dictionary in a way, that it is able to return you the most similar w
 #### Examples
 
 ```js
-fruits = new Dictionary(['cherry', 'pineapple', 'melon', 'strawberry', 'raspberry']);
-fruits.findMostSimilar('strawbery'); // must return "strawberry"
-fruits.findMostSimilar('berry'); // must return "cherry"
+fruits = new Dictionary([
+  "cherry",
+  "pineapple",
+  "melon",
+  "strawberry",
+  "raspberry"
+]);
+fruits.findMostSimilar("strawbery"); // must return "strawberry"
+fruits.findMostSimilar("berry"); // must return "cherry"
 
-things = new Dictionary(['stars', 'mars', 'wars', 'codec', 'codewars']);
-things.findMostSimilar('coddwars'); // must return "codewars"
+things = new Dictionary(["stars", "mars", "wars", "codec", "codewars"]);
+things.findMostSimilar("coddwars"); // must return "codewars"
 
-languages = new Dictionary(['javascript', 'java', 'ruby', 'php', 'python', 'coffeescript']);
-languages.findMostSimilar('heaven'); // must return "java"
-languages.findMostSimilar('javascript'); // must return "javascript" (same words are obviously the most similar ones)
+languages = new Dictionary([
+  "javascript",
+  "java",
+  "ruby",
+  "php",
+  "python",
+  "coffeescript"
+]);
+languages.findMostSimilar("heaven"); // must return "java"
+languages.findMostSimilar("javascript"); // must return "javascript" (same words are obviously the most similar ones)
 ```
-
 
 #### Solution
 
@@ -47,22 +62,24 @@ function Dictionary(words) {
 
 Dictionary.prototype.findMostSimilar = function(term) {
   let arr = [];
-  for(let i = 0; i < this.words.length; i++) {
-    let count = 0, nextIdx = 0;
-    this.words[i].split('').forEach(l => {
-      if(term.indexOf(l, nextIdx) > -1) {
+  for (let i = 0; i < this.words.length; i++) {
+    let count = 0,
+      nextIdx = 0;
+    this.words[i].split("").forEach(l => {
+      if (term.indexOf(l, nextIdx) > -1) {
         count++;
         nextIdx = term.indexOf(l, nextIdx);
       } else count--;
-    })
-    arr.push(count)
+    });
+    arr.push(count);
   }
   return this.words[arr.indexOf(Math.max(...arr))];
-}
+};
 ```
 
 ### Perimeter of squares in a rectangle
-The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 * (1 + 1 + 2 + 3 + 5 + 8) = 4 * 20 = 80
+
+The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 _ (1 + 1 + 2 + 3 + 5 + 8) = 4 _ 20 = 80
 
 Could you give the sum of the perimeters of all the squares in a rectangle when there are n + 1 squares disposed in the same manner as in the drawing:
 
@@ -83,14 +100,14 @@ perimeter(7)  should return 216
 
 ```js
 function perimeter(n) {
-  if(n === 0) return 4;
-  if(n === 1) return 8;
+  if (n === 0) return 4;
+  if (n === 1) return 8;
 
-  let fib = [1, 1]
-  for(let i = 2; i <= n; i++) {
-    fib.push(fib[i-1] + fib[i-2]);
+  let fib = [1, 1];
+  for (let i = 2; i <= n; i++) {
+    fib.push(fib[i - 1] + fib[i - 2]);
   }
-  return fib.reduce((acc,cur) => acc += cur * 4, 0);
+  return fib.reduce((acc, cur) => (acc += cur * 4), 0);
 }
 ```
 
@@ -107,21 +124,22 @@ But will your code be performant enough?
 #### Examples
 
 ```js
-input   =  "Hello, World!"
-result  =  "1112111121311"
+input = "Hello, World!";
+result = "1112111121311";
 
-input   =  "aaaaaaaaaaaa"
-result  =  "123456789101112"
+input = "aaaaaaaaaaaa";
+result = "123456789101112";
 ```
 
 #### Solution
 
 ```js
-function numericals(s){
-  let res = '', chars = {};
-  for(let i = 0; i < s.length; i++) {
+function numericals(s) {
+  let res = "",
+    chars = {};
+  for (let i = 0; i < s.length; i++) {
     let cur = s[i];
-    if(chars.hasOwnProperty(cur)) {
+    if (chars.hasOwnProperty(cur)) {
       chars[cur] += 1;
     } else {
       chars[cur] = 1;
@@ -137,38 +155,42 @@ function numericals(s){
 Do you have in mind the good old TicTacToe?
 
 Assuming that you get all the data in one array, you put a space around each value, `|` as a columns separator and multiple `-` as rows separator, with something like `["O", "X", " ", " ", "X", " ", "X", "O", " "]` you should be returning this structure (inclusive of new lines):
+
 ```
- O | X |   
+ O | X |
 -----------
-   | X |   
+   | X |
 -----------
- X | O |   
+ X | O |
 ```
+
 Now, to spice up things a bit, we are going to expand our board well beyond a trivial `3` x `3` square and we will accept rectangles of big sizes, still all as a long linear array.
 
 For example, for `"O", "X", " ", " ", "X", " ", "X", "O", " ", "O"]` (same as above, just one extra `"O"`) and knowing that the length of each row is `5`, you will be returning
+
 ```
- O | X |   |   | X 
+ O | X |   |   | X
 -------------------
-   | X | O |   | O 
+   | X | O |   | O
 ```
+
 And worry not about missing elements, as the array/list/vector lenght is always going to be a multiple of the width.
 
 #### Solution
 
 ```js
-function displayBoard(board, width){
-  let result = '';
-  for(let i = 0; i < board.length; i++) {
-    if( i > 0 && i % width === 0) {
-      result += '---'.repeat(width) + '-'.repeat(width - 1) + '\n';
+function displayBoard(board, width) {
+  let result = "";
+  for (let i = 0; i < board.length; i++) {
+    if (i > 0 && i % width === 0) {
+      result += "---".repeat(width) + "-".repeat(width - 1) + "\n";
     }
-    
-    result += ' ' + board[i] + ' ';
-    
-    if(i + 1 < board.length) {
-      if((i + 1) % width === 0) result += '\n';
-      else result += '|' 
+
+    result += " " + board[i] + " ";
+
+    if (i + 1 < board.length) {
+      if ((i + 1) % width === 0) result += "\n";
+      else result += "|";
     }
   }
   return result;
@@ -190,18 +212,18 @@ All letters will be lowercase and all inputs will be valid.
 #### Solution
 
 ```js
-function high(x){
-  let arr = x.split(' ');    
-  let scores = [];    
-  arr.map(w => {    
-    let wordScore = 0;    
-    for(let i = 0; i < w.length; i++) {    
-        wordScore += w[i].charCodeAt() - 96;
-    }    
-    scores.push(wordScore);    
-    wordScore = 0;    
-  });    
-  return arr[scores.indexOf(Math.max(...scores))];  
+function high(x) {
+  let arr = x.split(" ");
+  let scores = [];
+  arr.map(w => {
+    let wordScore = 0;
+    for (let i = 0; i < w.length; i++) {
+      wordScore += w[i].charCodeAt() - 96;
+    }
+    scores.push(wordScore);
+    wordScore = 0;
+  });
+  return arr[scores.indexOf(Math.max(...scores))];
 }
 ```
 
@@ -216,10 +238,52 @@ For instance:
 "camel case word".camelCase() => CamelCaseWord
 ```
 
-### Solution
+#### Solution
 
 ```js
-String.prototype.camelCase=function() {    
-    return this.split(' ').map(w => w.slice(0, 1).toUpperCase() + w.slice(1)).join('');     
-}    
+String.prototype.camelCase = function() {
+  return this.split(" ")
+    .map(w => w.slice(0, 1).toUpperCase() + w.slice(1))
+    .join("");
+};
+```
+
+## 7kyu
+
+### Drying Potatoes
+
+All we eat is water and dry matter.
+
+John bought potatoes: their weight is 100 kilograms. Potatoes contain water and dry matter.
+
+The water content is 99 percent of the total weight. He thinks they are too wet and puts them in an oven - at low temperature - for them to lose some water.
+
+At the output the water content is only 98%.
+
+What is the total weight in kilograms (water content plus dry matter) coming out of the oven?
+
+He finds 50 kilograms and he thinks he made a mistake: "So much weight lost for such a small change in water content!"
+
+Can you help him?
+
+Write function `potatoes` with
+
+int parameter `p0` - initial percent of water-
+int parameter `w0` - initial weight -
+int parameter `p1` - final percent of water -
+
+`potatoes` should return the final weight coming out of the oven `w1` truncated as an int.
+
+Example:
+
+`potatoes(99, 100, 98) --> 50`
+
+#### Solution
+
+```js
+function potatoes(p0, w0, p1) {
+  nonWater = ((p0 - p1) * w0) / 100;
+  water = (p1 * w0) / 100;
+  return Math.floor(w0 - nonWater / ((w0 - water) / w0));
+}
 ```
