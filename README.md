@@ -14,9 +14,9 @@
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
 
-## 5kyu
+## [5kyu](#katas)
 
-### Did you mean ...?
+### [Did you mean ...?](#katas)
 
 I'm sure, you know Google's "Did you mean ...?", when you entered a search term and mistyped a word. In this kata we want to implement something similar.
 
@@ -26,7 +26,7 @@ Same words are obviously the most similar ones. A word that needs one letter to 
 
 Extend the dictionary in a way, that it is able to return you the most similar word from the list of known words.
 
-#### Examples
+Examples:
 
 ```js
 fruits = new Dictionary([
@@ -78,7 +78,7 @@ Dictionary.prototype.findMostSimilar = function(term) {
 };
 ```
 
-### Perimeter of squares in a rectangle
+### [Perimeter of squares in a rectangle](#katas)
 
 The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 _ (1 + 1 + 2 + 3 + 5 + 8) = 4 _ 20 = 80
 
@@ -112,9 +112,9 @@ function perimeter(n) {
 }
 ```
 
-## 6kyu
+## [6kyu](#katas)
 
-### Numericals of a String
+### [Numericals of a String](#katas)
 
 You are given an input string.
 
@@ -122,7 +122,7 @@ For each symbol in the string if it's the first character occurence, replace it 
 
 But will your code be performant enough?
 
-#### Examples
+Examples:
 
 ```js
 input = "Hello, World!";
@@ -151,7 +151,7 @@ function numericals(s) {
 }
 ```
 
-### Tic-Tac-Toe-like table Generator
+### [Tic-Tac-Toe-like table Generator](#katas)
 
 Do you have in mind the good old TicTacToe?
 
@@ -198,7 +198,7 @@ function displayBoard(board, width) {
 }
 ```
 
-### Highest Scoring Word
+### [Highest Scoring Word](#katas)
 
 Given a string of words, you need to find the highest scoring word.
 
@@ -228,7 +228,7 @@ function high(x) {
 }
 ```
 
-### CamelCase Method
+### [CamelCase Method](#katas)
 
 Write simple .camelCase method (camel_case function in PHP, CamelCase in C# or camelCase in Java) for strings. All words must have their first letter capitalized without spaces.
 
@@ -249,7 +249,7 @@ String.prototype.camelCase = function() {
 };
 ```
 
-### Unique In Order
+### [Unique In Order](#katas)
 
 Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
 
@@ -270,9 +270,9 @@ var uniqueInOrder=function(iterable){
 }
 ```
 
-## 7kyu
+## [7kyu](#katas)
 
-### Drying Potatoes
+### [Drying Potatoes](#katas)
 
 All we eat is water and dry matter.
 
