@@ -10,6 +10,7 @@
   - [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
   - [Highest Scoring Word](#highest-scoring-word)
   - [CamelCase Method](#camelcase-method)
+  - [Unique In Order](#unique-in-order)
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
 
@@ -246,6 +247,27 @@ String.prototype.camelCase = function() {
     .map(w => w.slice(0, 1).toUpperCase() + w.slice(1))
     .join("");
 };
+```
+
+### Unique In Order
+
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+For example:
+
+```js
+uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+```
+
+#### Solution
+
+```js
+var uniqueInOrder=function(iterable){
+  let arr = iterable.constructor === Array ? iterable : iterable.split('');
+  return arr.filter((el, i, array) =>  el !== array[i+1]);
+}
 ```
 
 ## 7kyu
