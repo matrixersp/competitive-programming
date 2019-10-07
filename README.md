@@ -282,8 +282,8 @@ Example:
 
 ```js
 function potatoes(p0, w0, p1) {
-  nonWater = ((p0 - p1) * w0) / 100;
-  water = (p1 * w0) / 100;
+  const nonWater = ((p0 - p1) * w0) / 100;
+  const water = (p1 * w0) / 100;
   return Math.floor(w0 - nonWater / ((w0 - water) / w0));
 }
 ```
