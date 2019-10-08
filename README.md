@@ -13,6 +13,7 @@
   - [Unique In Order](#unique-in-order)
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
+  - [Sum of Odd Numbers](#sum-of-odd-numbers)
 
 ## [5kyu](#katas)
 
@@ -307,5 +308,33 @@ function potatoes(p0, w0, p1) {
   const nonWater = ((p0 - p1) * w0) / 100;
   const water = (p1 * w0) / 100;
   return Math.floor(w0 - nonWater / ((w0 - water) / w0));
+}
+```
+
+### [Sum of Odd Numbers](#katas)
+
+Given the triangle of consecutive odd numbers:
+
+```
+             1
+          3     5
+       7     9    11
+   13    15    17    19
+21    23    25    27    29
+...
+```
+
+Calculate the row sums of this triangle from the row index (starting at index 1) e.g.:
+
+```js
+rowSumOddNumbers(1); // 1
+rowSumOddNumbers(2); // 3 + 5 = 8
+```
+
+#### Solution
+
+```js
+function rowSumOddNumbers(n) {
+  return (n * (n - 1) + 1) * n + n * (n - 1);
 }
 ```
