@@ -12,6 +12,7 @@
   - [CamelCase Method](#camelcase-method)
   - [Unique In Order](#unique-in-order)
   - [Evil Autocorrect Prank](#evil-autocorrect-prank)
+  - [The Vowel Code](#the-vowel-code)
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
   - [Sum of Odd Numbers](#sum-of-odd-numbers)
@@ -293,6 +294,47 @@ For the purposes of this kata, here's what you need to support:
 ```js
 function autocorrect(input){
   return input.replace(/(?<!\w)(u|you+)(?!\w)/gi, 'your sister');
+}
+```
+
+### [The Vowel Code](#katas)
+
+Step 1: Create a function called encode() to replace all the lowercase vowels in a given string with numbers according to the following pattern:
+
+a -> 1
+
+e -> 2
+
+i -> 3
+
+o -> 4
+
+u -> 5
+
+For example, encode("hello") would return "h2ll4" There is no need to worry about uppercase vowels in this kata.
+
+Step 2: Now create a function called decode() to turn the numbers back into vowels according to the same pattern shown above.
+
+For example, decode("h3 th2r2") would return "hi there"
+
+For the sake of simplicity, you can assume that any numbers passed into the function will correspond to vowels.
+
+#### Solution
+
+```js
+let vowels = 'aeiou';
+function encode(string) {
+  return string.replace(/[aeiou]/g, match => {
+    if (vowels.indexOf(match) > -1)
+      return vowels.indexOf(match) + 1;
+  });
+}
+
+function decode(string) {
+  return string.replace(/[12345]/g, match => {    
+    if(!Number.isNaN(match))
+      return vowels[match - 1];
+  });
 }
 ```
 
