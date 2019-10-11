@@ -65,7 +65,7 @@ function Dictionary(words) {
 }
 
 Dictionary.prototype.findMostSimilar = function(term) {
-  let arr = [];
+  const arr = [];
   for (let i = 0; i < this.words.length; i++) {
     let count = 0,
       nextIdx = 0;
@@ -107,7 +107,7 @@ function perimeter(n) {
   if (n === 0) return 4;
   if (n === 1) return 8;
 
-  let fib = [1, 1];
+  const fib = [1, 1];
   for (let i = 2; i <= n; i++) {
     fib.push(fib[i - 1] + fib[i - 2]);
   }
@@ -217,8 +217,8 @@ All letters will be lowercase and all inputs will be valid.
 
 ```js
 function high(x) {
-  let arr = x.split(" ");
-  let scores = [];
+  const arr = x.split(" ");
+  const scores = [];
   arr.map(w => {
     let wordScore = 0;
     for (let i = 0; i < w.length; i++) {
@@ -268,7 +268,7 @@ uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
 ```js
 var uniqueInOrder=function(iterable){
-  let arr = iterable.constructor === Array ? iterable : iterable.split('');
+  const arr = iterable.constructor === Array ? iterable : iterable.split('');
   return arr.filter((el, i, array) =>  el !== array[i+1]);
 }
 ```
@@ -322,7 +322,7 @@ For the sake of simplicity, you can assume that any numbers passed into the func
 #### Solution
 
 ```js
-let vowels = 'aeiou';
+const vowels = 'aeiou';
 function encode(string) {
   return string.replace(/[aeiou]/g, match => {
     if (vowels.indexOf(match) > -1)
