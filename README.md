@@ -16,6 +16,7 @@
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
   - [Sum of Odd Numbers](#sum-of-odd-numbers)
+  - [VAPORCODE](#vaporcode)
 
 ## [5kyu](#katas)
 
@@ -403,5 +404,26 @@ rowSumOddNumbers(2); // 3 + 5 = 8
 ```js
 function rowSumOddNumbers(n) {
   return (n * (n - 1) + 1) * n + n * (n - 1);
+}
+```
+
+### [VAPORCODE](#katas)
+
+ASC Week 1 Challenge 4 (Medium #1)
+
+Write a function that converts any sentence into a V A P O R W A V E sentence. a V A P O R W A V E sentence converts all the letters into uppercase, and adds 2 spaces between each letter (or special character) to create this V A P O R W A V E effect.
+
+Examples:
+
+```js
+vaporcode("Lets go to the movies") // output => "L  E  T  S  G  O  T  O  T  H  E  M  O  V  I  E  S"
+vaporcode("Why isn't my code working?") // output => "W  H  Y  I  S  N  '  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?"
+```
+
+#### Solution:
+
+```js
+function vaporcode(s) {
+	return s.toUpperCase().replace(/\s/g, '').split('').join('  ');
 }
 ```
