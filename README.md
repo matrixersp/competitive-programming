@@ -17,6 +17,7 @@
   - [Drying Potatoes](#drying-potatoes)
   - [Sum of Odd Numbers](#sum-of-odd-numbers)
   - [VAPORCODE](#vaporcode)
+  - [The First Non Repeated Character In A String](#the-first-non-repeated-character-in-a-string)
 
 ## [5kyu](#katas)
 
@@ -425,5 +426,31 @@ vaporcode("Why isn't my code working?") // output => "W  H  Y  I  S  N  '  T  M 
 ```js
 function vaporcode(s) {
 	return s.toUpperCase().replace(/\s/g, '').split('').join('  ');
+}
+```
+
+### [The First Non Repeated Character In A String](#katas)
+
+You need to write a function, that returns the first non-repeated character in the given string.
+
+For example for string `"test"` function should return `'e'`.
+For string `"teeter"` function should return `'r'`.
+
+If a string contains all unique characters, then return just the first character of the string.
+Example: for input `"trend"` function should return `'t'`
+
+You can assume, that the input string has always non-zero length.
+
+If there is no repeating character, return `null` in JS or Java, and `None` in Python.
+
+#### Solution
+
+```js
+function firstNonRepeated(s) {
+  for(let i = 0; i < s.length; i++) {
+    const idx = s.indexOf(s[i]);
+    if(s.indexOf(s[i], idx + 1) === -1) return s[i];
+  }
+  return null;
 }
 ```
