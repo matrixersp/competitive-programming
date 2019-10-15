@@ -19,6 +19,7 @@
   - [Sum of Odd Numbers](#sum-of-odd-numbers)
   - [VAPORCODE](#vaporcode)
   - [The First Non Repeated Character In A String](#the-first-non-repeated-character-in-a-string)
+  - [Fun with lists: length](#fun-with-lists:-length)
 
 ## [5kyu](#katas)
 
@@ -340,7 +341,7 @@ function decode(string) {
   });
 }
 ```
-### [Simple time difference](#katas)
+### [Simple Time Difference](#katas)
 
 In this Kata, you will be given a series of times at which an alarm goes off. Your task will be to determine the maximum time interval between alarms. Each alarm starts ringing at the beginning of the corresponding minute and rings for exactly one minute. The times in the array are not in chronological order. Ignore duplicate times, if any.
 
@@ -500,3 +501,36 @@ function firstNonRepeated(s) {
   return null;
 }
 ```
+
+### [Fun with lists: length](#katas)
+
+Implement the method **length**, which accepts a linked list (head), and returns the length of the list.
+
+For example: Given the list: `1 -> 2 -> 3 -> 4`, **length** should return 4.
+
+The linked list is defined as follows:
+
+```js
+function Node(data, next = null) {
+  this.data = data;
+  this.next = next;
+}
+```
+
+Note: the list may be null and can hold any type of value.
+
+#### Solution
+
+```js
+function length(head) {  
+  let len = 0;
+  while(head) {
+    head = head ? head.next : null;
+    len++;
+  }
+  
+  return len;
+}
+```
+
+
