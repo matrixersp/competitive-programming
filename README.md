@@ -3,7 +3,7 @@
 ## Katas
 
 - [5kyu](#5kyu)
-  - [Did you mean ...?](#did-you-mean-...?)
+  - [Did you mean ...?](#did-you-mean-)
   - [Perimeter of squares in a rectangle](#Perimeter-of-squares-in-a-rectangle)
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
@@ -19,7 +19,7 @@
   - [Sum of Odd Numbers](#sum-of-odd-numbers)
   - [VAPORCODE](#vaporcode)
   - [The First Non Repeated Character In A String](#the-first-non-repeated-character-in-a-string)
-  - [Fun with lists: length](#fun-with-lists:-length)
+  - [Fun with lists: length](#fun-with-lists-length)
 
 ## [5kyu](#katas)
 
