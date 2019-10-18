@@ -5,6 +5,7 @@
 - [5kyu](#5kyu)
   - [Did you mean ...?](#did-you-mean-)
   - [Perimeter of squares in a rectangle](#Perimeter-of-squares-in-a-rectangle)
+  - [flatten()](#flatten)
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
   - [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
@@ -116,6 +117,38 @@ function perimeter(n) {
     fib.push(fib[i - 1] + fib[i - 2]);
   }
   return fib.reduce((acc, cur) => (acc += cur * 4), 0);
+}
+```
+
+### [flatten()](#katas)
+
+For this exercise you will create a global flatten method. The method takes in any number of arguments and flattens them into a single array. If any of the arguments passed in are an array then the individual objects within the array will be flattened so that they exist at the same level as the other arguments. Any nested arrays, no matter how deep, should be flattened into the single array result.
+
+The following are examples of how this function would be used and what the expected results would be:
+
+```js
+flatten(1, [2, 3], 4, 5, [6, [7]]) // returns [1, 2, 3, 4, 5, 6, 7]
+flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 4, 'c']
+```
+
+#### Solution
+
+```js
+function flatten(...args) {
+  let flattened = false;
+  let arr = [...args];
+  while(!flattened) {
+    flattened = true;
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i] && arr[i].constructor === Array) {
+        arr.splice(i, 1, ...arr[i]);
+        flattened = false;
+      } else {
+        arr.splice(i, 1, arr[i]);
+      }
+    }
+  }
+  return arr;
 }
 ```
 
