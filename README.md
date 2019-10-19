@@ -21,6 +21,7 @@
   - [VAPORCODE](#vaporcode)
   - [The First Non Repeated Character In A String](#the-first-non-repeated-character-in-a-string)
   - [Fun with lists: length](#fun-with-lists-length)
+  - [Sort the Gift Code](#sort-the-gift-code)
 
 ## [5kyu](#katas)
 
@@ -135,14 +136,14 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 
 ```js
 function flatten(...args) {
-  let flattened = false;
+  let isFlattened = false;
   let arr = [...args];
-  while(!flattened) {
-    flattened = true;
+  while(!isFlattened) {
+    isFlattened = true;
     for(let i = 0; i < arr.length; i++) {
       if(arr[i] && arr[i].constructor === Array) {
         arr.splice(i, 1, ...arr[i]);
-        flattened = false;
+        isFlattened = false;
       } else {
         arr.splice(i, 1, arr[i]);
       }
@@ -566,4 +567,27 @@ function length(head) {
 }
 ```
 
+### [Sort the Gift Code](#katas)
 
+Santa's senior gift organizer Elf developed a way to represent up to 26 gifts by assigning a unique alphabetical character to each gift. After each gift was assigned a character, the gift organizer Elf then joined the characters to form the gift ordering code.
+
+Santa asked his organizer to order the characters in alphabetical order, but the Elf fell asleep from consuming too much hot chocolate and candy canes! Can you help him out?
+
+Sort the Gift Code
+Write a function called sortGiftCode/sort_gift_code/SortGiftCode that accepts a string containing up to 26 unique alphabetical characters, and returns a string containing the same characters in alphabetical order.
+
+Examples:
+
+```js
+sortGiftCode( 'abcdef' ); //=> returns 'abcdef'
+sortGiftCode( 'pqksuvy' ); //=> returns 'kpqsuvy'
+sortGiftCode( 'zyxwvutsrqponmlkjihgfedcba' ); //=> returns 'abcdefghijklmnopqrstuvwxyz'
+```
+
+#### Solution
+
+```js
+function sortGiftCode(code){
+  return code.split('').sort().join('');
+}
+```
