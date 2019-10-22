@@ -15,6 +15,7 @@
   - [Evil Autocorrect Prank](#evil-autocorrect-prank)
   - [The Vowel Code](#the-vowel-code)
   - [Simple Time Difference](#simple-time-difference)
+  - [Character with longest consecutive repetition](#character-with-longest-consecutive-repetition)
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
   - [Sum of Odd Numbers](#sum-of-odd-numbers)
@@ -418,6 +419,32 @@ function solve(arr) {
 
 	const maxMinutes = Math.max(...intervals);
 	return getTime(maxMinutes);
+}
+```
+
+### [Character with longest consecutive repetition](#katas)
+
+For a given string `s` find the character `c` (or `C`) with longest consecutive repetition and return:
+```js
+[c, l]
+```
+where `l` (or `L`) is the length of the repetition. If there are two or more characters with the same `l` return the first.
+
+For empty string return:
+```js
+["", 0]
+```
+
+#### Solution
+
+```js
+function longestRepetition(s) {
+  if(!s) return ['', 0];
+	const re = /(.)\1*/g;
+	const matches = s.match(re);
+	const arr = matches.map(l => l.length);
+	const max = Math.max(...arr);
+	return [matches[arr.indexOf(max)][0], max]
 }
 ```
 
