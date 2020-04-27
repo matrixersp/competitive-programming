@@ -23,6 +23,7 @@
   - [The First Non Repeated Character In A String](#the-first-non-repeated-character-in-a-string)
   - [Fun with lists: length](#fun-with-lists-length)
   - [Sort the Gift Code](#sort-the-gift-code)
+  - [My Languages](#my-languages)
 
 ## [5kyu](#katas)
 
@@ -44,7 +45,7 @@ fruits = new Dictionary([
   "pineapple",
   "melon",
   "strawberry",
-  "raspberry"
+  "raspberry",
 ]);
 fruits.findMostSimilar("strawbery"); // must return "strawberry"
 fruits.findMostSimilar("berry"); // must return "cherry"
@@ -58,7 +59,7 @@ languages = new Dictionary([
   "ruby",
   "php",
   "python",
-  "coffeescript"
+  "coffeescript",
 ]);
 languages.findMostSimilar("heaven"); // must return "java"
 languages.findMostSimilar("javascript"); // must return "javascript" (same words are obviously the most similar ones)
@@ -71,12 +72,12 @@ function Dictionary(words) {
   this.words = words;
 }
 
-Dictionary.prototype.findMostSimilar = function(term) {
+Dictionary.prototype.findMostSimilar = function (term) {
   const arr = [];
   for (let i = 0; i < this.words.length; i++) {
     let count = 0,
       nextIdx = 0;
-    this.words[i].split("").forEach(l => {
+    this.words[i].split("").forEach((l) => {
       if (term.indexOf(l, nextIdx) > -1) {
         count++;
         nextIdx = term.indexOf(l, nextIdx);
@@ -129,8 +130,8 @@ For this exercise you will create a global flatten method. The method takes in a
 The following are examples of how this function would be used and what the expected results would be:
 
 ```js
-flatten(1, [2, 3], 4, 5, [6, [7]]) // returns [1, 2, 3, 4, 5, 6, 7]
-flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 4, 'c']
+flatten(1, [2, 3], 4, 5, [6, [7]]); // returns [1, 2, 3, 4, 5, 6, 7]
+flatten("a", ["b", 2], 3, null, [[4], ["c"]]); // returns ['a', 'b', 2, 3, null, 4, 'c']
 ```
 
 #### Solution
@@ -139,10 +140,10 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 function flatten(...args) {
   let isFlattened = false;
   let arr = [...args];
-  while(!isFlattened) {
+  while (!isFlattened) {
     isFlattened = true;
-    for(let i = 0; i < arr.length; i++) {
-      if(arr[i] && arr[i].constructor === Array) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] && arr[i].constructor === Array) {
         arr.splice(i, 1, ...arr[i]);
         isFlattened = false;
       } else {
@@ -258,7 +259,7 @@ All letters will be lowercase and all inputs will be valid.
 function high(x) {
   const arr = x.split(" ");
   const scores = [];
-  arr.map(w => {
+  arr.map((w) => {
     let wordScore = 0;
     for (let i = 0; i < w.length; i++) {
       wordScore += w[i].charCodeAt() - 96;
@@ -284,9 +285,9 @@ For instance:
 #### Solution
 
 ```js
-String.prototype.camelCase = function() {
+String.prototype.camelCase = function () {
   return this.split(" ")
-    .map(w => w.slice(0, 1).toUpperCase() + w.slice(1))
+    .map((w) => w.slice(0, 1).toUpperCase() + w.slice(1))
     .join("");
 };
 ```
@@ -298,18 +299,18 @@ Implement the function unique_in_order which takes as argument a sequence and re
 For example:
 
 ```js
-uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
-uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
-uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+uniqueInOrder("AAAABBBCCDAABBB") == ["A", "B", "C", "D", "A", "B"];
+uniqueInOrder("ABBCcAD") == ["A", "B", "C", "c", "A", "D"];
+uniqueInOrder([1, 2, 2, 3, 3]) == [1, 2, 3];
 ```
 
 #### Solution
 
 ```js
-var uniqueInOrder=function(iterable){
-  const arr = iterable.constructor === Array ? iterable : iterable.split('');
-  return arr.filter((el, i, array) =>  el !== array[i+1]);
-}
+var uniqueInOrder = function (iterable) {
+  const arr = iterable.constructor === Array ? iterable : iterable.split("");
+  return arr.filter((el, i, array) => el !== array[i + 1]);
+};
 ```
 
 ### [Evil Autocorrect Prank](#katas)
@@ -331,8 +332,8 @@ For the purposes of this kata, here's what you need to support:
 #### Solution
 
 ```js
-function autocorrect(input){
-  return input.replace(/(?<!\w)(u|you+)(?!\w)/gi, 'your sister');
+function autocorrect(input) {
+  return input.replace(/(?<!\w)(u|you+)(?!\w)/gi, "your sister");
 }
 ```
 
@@ -361,90 +362,96 @@ For the sake of simplicity, you can assume that any numbers passed into the func
 #### Solution
 
 ```js
-const vowels = 'aeiou';
+const vowels = "aeiou";
 function encode(string) {
-  return string.replace(/[aeiou]/g, match => {
-    if (vowels.indexOf(match) > -1)
-      return vowels.indexOf(match) + 1;
+  return string.replace(/[aeiou]/g, (match) => {
+    if (vowels.indexOf(match) > -1) return vowels.indexOf(match) + 1;
   });
 }
 
 function decode(string) {
-  return string.replace(/[12345]/g, match => {    
-    if(!Number.isNaN(match))
-      return vowels[match - 1];
+  return string.replace(/[12345]/g, (match) => {
+    if (!Number.isNaN(match)) return vowels[match - 1];
   });
 }
 ```
+
 ### [Simple Time Difference](#katas)
 
 In this Kata, you will be given a series of times at which an alarm goes off. Your task will be to determine the maximum time interval between alarms. Each alarm starts ringing at the beginning of the corresponding minute and rings for exactly one minute. The times in the array are not in chronological order. Ignore duplicate times, if any.
 
 For example:
+
 ```
 solve(["14:51"]) = "23:59". If the alarm goes off now, it will not go off for another 23 hours and 59 minutes.
 solve(["23:00","04:22","18:05","06:24"]) == "11:40". The max interval that the alarm will not go off is 11 hours and 40 minutes.
 ```
+
 In the second example, the alarm goes off 4 times in a day.
 
 #### Solution
 
 ```js
 function getMinutes(time) {
-	const [h, m] = time.split(':');
-	return Number(h) * 60 + Number(m);
+  const [h, m] = time.split(":");
+  return Number(h) * 60 + Number(m);
 }
 
 function getTime(minutes) {
-	const h = Math.floor(minutes / 60);
-	const m = minutes % 60;
-	return `${h > 9 ? h : '0' + h}:${m > 9 ? m : '0' + m}`;
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return `${h > 9 ? h : "0" + h}:${m > 9 ? m : "0" + m}`;
 }
 
 function solve(arr) {
-	const minutes = [];
-	for (let i = 0; i < arr.length; i++) {
-		minutes.push(getMinutes(arr[i]))
-	}
+  const minutes = [];
+  for (let i = 0; i < arr.length; i++) {
+    minutes.push(getMinutes(arr[i]));
+  }
 
-	minutes.sort((a, b) => a - b);
-	
-	const intervals = [];
-	for (let i = 1; i < minutes.length; i++) {
-		intervals.push(minutes[i] - minutes[i - 1] - 1)
-	}
+  minutes.sort((a, b) => a - b);
 
-	const DAY_IN_MINUTES = 24 * 60;
-	intervals.unshift(minutes[0] + DAY_IN_MINUTES - minutes[minutes.length - 1] - 1);
+  const intervals = [];
+  for (let i = 1; i < minutes.length; i++) {
+    intervals.push(minutes[i] - minutes[i - 1] - 1);
+  }
 
-	const maxMinutes = Math.max(...intervals);
-	return getTime(maxMinutes);
+  const DAY_IN_MINUTES = 24 * 60;
+  intervals.unshift(
+    minutes[0] + DAY_IN_MINUTES - minutes[minutes.length - 1] - 1
+  );
+
+  const maxMinutes = Math.max(...intervals);
+  return getTime(maxMinutes);
 }
 ```
 
 ### [Character with longest consecutive repetition](#katas)
 
 For a given string `s` find the character `c` (or `C`) with longest consecutive repetition and return:
+
 ```js
-[c, l]
+[c, l];
 ```
+
 where `l` (or `L`) is the length of the repetition. If there are two or more characters with the same `l` return the first.
 
 For empty string return:
+
 ```js
-["", 0]
+["", 0];
 ```
 
 #### Solution
 
 ```js
 function longestRepetition(s) {
-  if(!s) return ['', 0];
-	const re = /(.)\1*/g;
-	const matches = s.match(re);
-	const arr = matches.map(l => l.length);
-	const max = Math.max(...arr);
-	return [matches[arr.indexOf(max)][0], max]
+  if (!s) return ["", 0];
+  const re = /(.)\1*/g;
+  const matches = s.match(re);
+  const arr = matches.map((l) => l.length);
+  const max = Math.max(...arr);
+  return [matches[arr.indexOf(max)][0], max];
 }
 ```
 
@@ -525,15 +532,15 @@ Write a function that converts any sentence into a V A P O R W A V E sentence. a
 Examples:
 
 ```js
-vaporcode("Lets go to the movies") // output => "L  E  T  S  G  O  T  O  T  H  E  M  O  V  I  E  S"
-vaporcode("Why isn't my code working?") // output => "W  H  Y  I  S  N  '  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?"
+vaporcode("Lets go to the movies"); // output => "L  E  T  S  G  O  T  O  T  H  E  M  O  V  I  E  S"
+vaporcode("Why isn't my code working?"); // output => "W  H  Y  I  S  N  '  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?"
 ```
 
 #### Solution:
 
 ```js
 function vaporcode(s) {
-	return s.toUpperCase().replace(/\s/g, '').split('').join('  ');
+  return s.toUpperCase().replace(/\s/g, "").split("").join("  ");
 }
 ```
 
@@ -555,9 +562,9 @@ If there is no repeating character, return `null` in JS or Java, and `None` in P
 
 ```js
 function firstNonRepeated(s) {
-  for(let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     const idx = s.indexOf(s[i]);
-    if(s.indexOf(s[i], idx + 1) === -1) return s[i];
+    if (s.indexOf(s[i], idx + 1) === -1) return s[i];
   }
   return null;
 }
@@ -583,13 +590,13 @@ Note: the list may be null and can hold any type of value.
 #### Solution
 
 ```js
-function length(head) {  
+function length(head) {
   let len = 0;
-  while(head) {
+  while (head) {
     head = head ? head.next : null;
     len++;
   }
-  
+
   return len;
 }
 ```
@@ -606,15 +613,40 @@ Write a function called sortGiftCode/sort_gift_code/SortGiftCode that accepts a 
 Examples:
 
 ```js
-sortGiftCode( 'abcdef' ); //=> returns 'abcdef'
-sortGiftCode( 'pqksuvy' ); //=> returns 'kpqsuvy'
-sortGiftCode( 'zyxwvutsrqponmlkjihgfedcba' ); //=> returns 'abcdefghijklmnopqrstuvwxyz'
+sortGiftCode("abcdef"); //=> returns 'abcdef'
+sortGiftCode("pqksuvy"); //=> returns 'kpqsuvy'
+sortGiftCode("zyxwvutsrqponmlkjihgfedcba"); //=> returns 'abcdefghijklmnopqrstuvwxyz'
 ```
 
 #### Solution
 
 ```js
-function sortGiftCode(code){
-  return code.split('').sort().join('');
+function sortGiftCode(code) {
+  return code.split("").sort().join("");
+}
+```
+
+### [My Languages](#katas)
+
+You are given a dictionary/hash/object containing some languages and your test results in the given languages. Return the list of languages where your test score is at least `60`, in descending order of the results.
+
+Note: the scores will always be unique (so no duplicate values)
+
+Examples:
+
+```js
+{"Java": 10, "Ruby": 80, "Python": 65}    -->  ["Ruby", "Python"]
+{"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
+{"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
+```
+
+#### Solution
+
+```js
+function myLanguages(langs) {
+  return Object.entries(langs)
+    .sort((a, b) => b[1] - a[1])
+    .filter((a) => a[1] >= 60)
+    .map((a) => a[0]);
 }
 ```
