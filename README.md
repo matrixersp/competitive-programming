@@ -6,6 +6,7 @@
   - [Did you mean ...?](#did-you-mean-)
   - [Perimeter of squares in a rectangle](#Perimeter-of-squares-in-a-rectangle)
   - [flatten()](#flatten)
+  - [First non-repeating character](#first-non-repeating-character)
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
   - [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
@@ -152,6 +153,29 @@ function flatten(...args) {
     }
   }
   return arr;
+}
+```
+
+### [First non-repeating character](#katas)
+
+Write a function named `first_non_repeating_letter` that takes a string input, and returns the first character that is not repeated anywhere in the string.
+
+For example, if given the input `'stress'`, the function should return `'t'`, since the letter t only occurs once in the string, and occurs first in the string.
+
+As an added challenge, upper- and lowercase letters are considered the same character, but the function should return the correct case for the initial letter. For example, the input `'sTreSS'` should return `'T'`.
+
+If a string contains all repeating characters, it should return an empty string (`""`) or `None` -- see sample tests.
+
+#### Solution
+
+```js
+function firstNonRepeatingLetter(s) {
+  return (
+    s.split("").find((l) => {
+      const re = new RegExp(l, "gi");
+      return s.match(re).length === 1;
+    }) || ""
+  );
 }
 ```
 
