@@ -8,6 +8,7 @@
   - [flatten()](#flatten)
   - [First non-repeating character](#first-non-repeating-character)
   - [What's a Perfect Power anyway?](#whats-a-perfect-power-anyway)
+  - [RGB To Hex Conversion](#rgb-to-hex-conversion)
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
   - [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
@@ -215,6 +216,34 @@ function isPP(n) {
     m++;
   }
   return null;
+}
+```
+
+### [RGB To Hex Conversion](#katas)
+
+The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+
+The following are examples of expected output values:
+
+```js
+rgb(255, 255, 255); // returns FFFFFF
+rgb(255, 255, 300); // returns FFFFFF
+rgb(0, 0, 0); // returns 000000
+rgb(148, 0, 211); // returns 9400D3
+```
+
+#### Solution
+
+```js
+function rgb(r, g, b) {
+  function hex(n) {
+    if (n >= 255) return "FF";
+    else if (n <= 0) return "00";
+    else return n.toString(16).toUpperCase().padStart(2, 0);
+  }
+  return hex(r) + hex(g) + hex(b);
 }
 ```
 
