@@ -19,6 +19,8 @@
   - [The Vowel Code](#the-vowel-code)
   - [Simple Time Difference](#simple-time-difference)
   - [Character with longest consecutive repetition](#character-with-longest-consecutive-repetition)
+  - [Encrypt this!](#encrypt-this)
+
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
   - [Sum of Odd Numbers](#sum-of-odd-numbers)
@@ -544,6 +546,39 @@ function longestRepetition(s) {
   const arr = matches.map((l) => l.length);
   const max = Math.max(...arr);
   return [matches[arr.indexOf(max)][0], max];
+}
+```
+
+### [Encrypt this!](#katas)
+
+Description:
+
+You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
+
+Your message is a string containing space separated words.
+You need to encrypt each word in the message using the following rules:
+The first letter needs to be converted to its ASCII code.
+The second letter needs to be switched with the last letter
+Keepin' it simple: There are no special characters in input.
+
+Examples:
+
+```js
+encryptThis("Hello") === "72olle"
+encryptThis("good") === "103doo"
+encryptThis("hello world") === "104olle 119drlo"
+```
+
+#### Solution
+
+```js
+var encryptThis = function (text) {
+	return text.split(' ').map(w => {
+		return w.charCodeAt(0) +
+			(w.length > 2
+				? w[w.length - 1] + w.slice(2, w.length - 1) + w[1]
+				: w.length > 1 && w[1]);
+	}).join(' ');
 }
 ```
 
