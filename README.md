@@ -2,6 +2,8 @@
 
 ## Katas
 
+- [4kyu](#4kyu)
+  - [Next bigger number with the same digits](#next-bigger-number-with-the-same-digits)
 - [5kyu](#5kyu)
   - [Did you mean ...?](#did-you-mean-)
   - [Perimeter of squares in a rectangle](#Perimeter-of-squares-in-a-rectangle)
@@ -30,6 +32,74 @@
   - [Fun with lists: length](#fun-with-lists-length)
   - [Sort the Gift Code](#sort-the-gift-code)
   - [My Languages](#my-languages)
+
+## [4kyu](#katas)
+
+### [Next bigger number with the same digits](#katas)
+Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example:
+
+```
+12 ==> 21
+513 ==> 531
+2017 ==> 2071
+```
+
+```js
+nextBigger(num: 12)   // returns 21
+nextBigger(num: 513)  // returns 531
+nextBigger(num: 2017) // returns 2071
+```
+If the digits can't be rearranged to form a bigger number, return -1 (or nil in Swift):
+
+```
+9 ==> -1
+111 ==> -1
+531 ==> -1
+```
+```js
+nextBigger(num: 9)   // returns nil
+nextBigger(num: 111) // returns nil
+nextBigger(num: 531) // returns nil
+```
+
+#### solution
+
+```js
+function nextBigger(n) {
+  const str = String(n);
+  const len = str.length;
+
+  if (len === 1) return -1;
+
+  for (let i = len - 2; i >= 0; i--) {
+    let index = findNextBiggerDigit(str, i);
+    if (index > -1) {
+      let arr = str.split("");
+      arr[i] = str[index];
+      arr[index] = str[i];
+      return parseInt(
+        arr
+          .slice(0, i + 1)
+          .concat(arr.slice(i + 1, arr.length).sort())
+          .join("")
+      );
+    }
+  }
+  return -1;
+}
+
+function findNextBiggerDigit(str, i) {
+  if (i === str.length - 2) {
+    if (str[i] < str[i + 1]) return i + 1;
+    else return -1;
+  }
+
+  for (let j = +str[i] + 1; j <= 9; j++) {
+    let index = str.indexOf(j, i + 1);
+    if (index > -1) return index;
+  }
+}
+```
 
 ## [5kyu](#katas)
 
