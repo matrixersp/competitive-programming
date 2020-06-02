@@ -11,6 +11,7 @@
   - [First non-repeating character](#first-non-repeating-character)
   - [What's a Perfect Power anyway?](#whats-a-perfect-power-anyway)
   - [RGB To Hex Conversion](#rgb-to-hex-conversion)
+  - [Convert A Hex String To RGB](#convert-a-hex-string-to-rgb)
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
   - [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
@@ -319,6 +320,34 @@ function rgb(r, g, b) {
   return hex(r) + hex(g) + hex(b);
 }
 ```
+
+### [Convert a hex string to RGB](#katas)
+
+When working with color values it can sometimes be useful to extract the individual red, green, and blue (RGB) component values for a color. Implement a function that meets these requirements:
+
+- Accepts a case-insensitive hexadecimal color string as its parameter (ex. `"#FF9933"` or `"#ff9933"`)
+- Returns an object with the structure `{r: 255, g: 153, b: 51}` where r, g, and b range from 0 through 255
+
+**Note**: your implementation does not need to support the shorthand form of hexadecimal notation (ie `"#FFF"`)
+
+Example:
+
+```
+"#FF9933" --> {r: 255, g: 153, b: 51}
+```
+
+#### Solution
+
+```js
+function hexStringToRGB(hexString) {
+  let rgb = [];
+  for(let i = 1; i < hexString.length - 1; i+=2) {
+    rgb.push(parseInt(hexString.substring(i, i+2), 16));
+  }
+  return {r: rgb[0], g: rgb[1], b: rgb[2]}
+}
+```
+
 
 ## [6kyu](#katas)
 
