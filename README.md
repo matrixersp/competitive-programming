@@ -34,6 +34,7 @@
   - [Sort the Gift Code](#sort-the-gift-code)
   - [My Languages](#my-languages)
   - [Largest 5 digit number in a series](#largest-5-digit-number-in-a-series)
+  - [Greet Me](#greet-me)
 
 ## [4kyu](#katas)
 
@@ -938,4 +939,24 @@ function solution(digits){
   }
   return max;
 }
+```
+
+
+### [Greet Me](#katas)
+
+Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+
+Example:
+
+```
+"riley" --> "Hello Riley!"
+"JACK"  --> "Hello Jack!"
+```
+
+#### Solution
+
+```js
+var greet = function (n) {
+  return 'Hello ' + n.slice(0, 1).toUpperCase() + n.slice(1).toLowerCase() + '!';
+};
 ```
