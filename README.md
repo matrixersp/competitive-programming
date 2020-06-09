@@ -35,6 +35,7 @@
   - [My Languages](#my-languages)
   - [Largest 5 digit number in a series](#largest-5-digit-number-in-a-series)
   - [Greet Me](#greet-me)
+  - [Halving Sum](#halving-sum)
 
 ## [4kyu](#katas)
 
@@ -959,4 +960,32 @@ Example:
 var greet = function (n) {
   return 'Hello ' + n.slice(0, 1).toUpperCase() + n.slice(1).toLowerCase() + '!';
 };
+```
+
+### [Halving Sum](#katas)
+
+Given a positive integer n, calculate the following sum:
+
+```
+n + n/2 + n/4 + n/8 + ...
+```
+All elements of the sum are the results of integer division.
+
+Example:
+
+```
+25  =>  25 + 12 + 6 + 3 + 1 = 47
+```
+
+#### Solution
+
+```js
+function halvingSum(n) {
+  let sum = n;
+  for(let i = 2; i <= n; i *= 2) {
+    sum += parseInt(n / i);
+  }
+  
+  return sum;
+}
 ```
