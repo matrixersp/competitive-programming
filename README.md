@@ -37,6 +37,7 @@
   - [Largest 5 digit number in a series](#largest-5-digit-number-in-a-series)
   - [Greet Me](#greet-me)
   - [Halving Sum](#halving-sum)
+  - [The reject() function](#the-reject-function)
 
 ## [4kyu](#katas)
 
@@ -1024,4 +1025,18 @@ function halvingSum(n) {
   
   return sum;
 }
+```
+
+### [The reject() function](#katas)
+
+Implement a function which filters out array values which satisfy the given predicate.
+
+```
+reject([1, 2, 3, 4, 5, 6], (n) => n % 2 === 0)  =>  [1, 3, 5]
+```
+
+#### Solution
+
+```js
+const reject = (a, p) => a.filter(v => !p(v));
 ```
