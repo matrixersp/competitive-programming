@@ -38,6 +38,7 @@
   - [Greet Me](#greet-me)
   - [Halving Sum](#halving-sum)
   - [The reject() function](#the-reject-function)
+  - [Largest pair sum in array](#largest-pair-sum-in-array)
 
 ## [4kyu](#katas)
 
@@ -1039,4 +1040,31 @@ reject([1, 2, 3, 4, 5, 6], (n) => n % 2 === 0)  =>  [1, 3, 5]
 
 ```js
 const reject = (a, p) => a.filter(v => !p(v));
+```
+
+### [Largest pair sum in array](#katas)
+Given a sequence of numbers, find the largest pair sum in the sequence.
+
+For example
+
+```
+[10, 14, 2, 23, 19] --> 42 (i.e. sum of 23 and 19)
+[99, 2, 2, 23, 19]  --> 122 (i.e. sum of 99 and 23)
+```
+Input sequence contains minimum two elements and every element is an integer.
+
+#### Solution
+
+```js
+function largestPairSum(numbers)
+{
+  let max = numbers[0] + numbers[1];
+  for(let i = 0; i < numbers.length; i++) {
+    for(let j = i + 1; j < numbers.length; j++) {
+      if(numbers[i] + numbers[j] > max) max = numbers[i] + numbers[j];   
+    }
+  }
+  
+  return max;
+}
 ```
