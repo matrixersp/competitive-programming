@@ -40,6 +40,7 @@
   - [The reject() function](#the-reject-function)
   - [Largest pair sum in array](#largest-pair-sum-in-array)
   - [Find min and max](#find-min-and-max)
+  - [Sum even numbers](#sum-even-numbers)
 
 ## [4kyu](#katas)
 
@@ -1074,6 +1075,7 @@ function largestPairSum(numbers)
 
 Implement a function that returns the minimal and the maximal value of a list (in this order).
 
+#### Solution
 ```js
 function getMinMax(arr){
   let min = arr[0];
@@ -1086,4 +1088,19 @@ function getMinMax(arr){
   
   return [min, max];
 };
+```
+### [Sum even numbers](#katas)
+Write a function named sumEvenNumbers, taking a sequence of numbers as single parameter. Your function must return the sum of the even values of this sequence.
+
+Only numbers without decimals like 4 or 4.0 can be even.
+
+**Input**  
+sequence of numbers: those numbers could be integers and/or floats.
+For example, considering this input value : `[4,3,1,2,5,10,6,7,9,8]`, then your function should return `30` (because `4 + 2 + 10 + 6 + 8 = 30`).
+
+#### Solution
+```js
+function sumEvenNumbers(input) {
+  return input.reduce((acc, cur) => acc += cur % 2 === 0 ? cur : 0, 0);
+}
 ```
