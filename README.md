@@ -39,6 +39,7 @@
   - [Halving Sum](#halving-sum)
   - [The reject() function](#the-reject-function)
   - [Largest pair sum in array](#largest-pair-sum-in-array)
+  - [Find min and max](#find-min-and-max)
 
 ## [4kyu](#katas)
 
@@ -1067,4 +1068,22 @@ function largestPairSum(numbers)
   
   return max;
 }
+```
+
+### [Find min and max](#katas)
+
+Implement a function that returns the minimal and the maximal value of a list (in this order).
+
+```js
+function getMinMax(arr){
+  let min = arr[0];
+  let max = arr[0];
+  
+  arr.forEach(val => {
+    if(val > max) max = val;
+    if(val < min) min = val;
+  });
+  
+  return [min, max];
+};
 ```
