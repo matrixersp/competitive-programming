@@ -25,6 +25,7 @@
   - [Encrypt this!](#encrypt-this)
   - [Find within array](#find-within-array)
   - [Delete occurrences of an element if it occurs more than n times](#delete-occurrences-of-an-element-)
+  - [I need more speed!](#i-need-more-speed)
 
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
@@ -752,6 +753,31 @@ function deleteNth(arr,n){
   }
   
   return newArr;
+}
+```
+
+### [I need more speed!](#katas)
+
+Write a function that will take in any array and reverse it.
+
+Sounds simple doesn't it?
+
+**NOTES**:
+
+Array should be reversed in place! (no need to return it)
+Usual builtins have been deactivated. Don't count on them.
+You'll have to do it fast enough, so think about performances
+
+#### Solution
+
+```js
+function reverse(arr) {
+   let len = arr.length;
+   for(let i = 0; i < Math.floor(arr.length / 2); i++) {
+    let cur = arr[i];
+    arr[i] = arr[len - i - 1];
+    arr[len - i - 1] = cur;
+   }
 }
 ```
 
