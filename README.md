@@ -26,6 +26,7 @@
   - [Find within array](#find-within-array)
   - [Delete occurrences of an element if it occurs more than n times](#delete-occurrences-of-an-element-)
   - [I need more speed!](#i-need-more-speed)
+  - [Break camelCase](#break-camelcase)
 
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
@@ -779,6 +780,22 @@ function reverse(arr) {
     arr[i] = arr[len - i - 1];
     arr[len - i - 1] = cur;
    }
+}
+```
+### [Break camelCase](#katas)
+
+Complete the solution so that the function will break up camel casing, using a space between words.
+
+Example:
+```
+solution("camelCasing")  ==  "camel Casing"
+```
+
+#### Solution
+
+```js
+function solution(string) {
+    return string.replace(/([A-Z])/g , " $1");
 }
 ```
 
