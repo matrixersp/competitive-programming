@@ -27,6 +27,7 @@
   - [Delete occurrences of an element if it occurs more than n times](#delete-occurrences-of-an-element-)
   - [I need more speed!](#i-need-more-speed)
   - [Break camelCase](#break-camelcase)
+  - [Are they the "same"?](#are-they-the-"same"?)
 
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
@@ -797,6 +798,41 @@ solution("camelCasing")  ==  "camel Casing"
 function solution(string) {
     return string.replace(/([A-Z])/g , " $1");
 }
+
+```
+
+### [Are they the "same"?](#katas)
+Given two arrays a and b write a function comp(a, b) (compSame(a, b) in Clojure) that checks whether the two arrays have the "same" elements, with the same multiplicities. "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
+
+Examples:
+```
+a = [121, 144, 19, 161, 19, 144, 19, 11]  
+b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+```
+comp(a, b) returns true because in b 121 is the square of 11, 14641 is the square of 121, 20736 the square of 144, 361 the square of 19, 25921 the square of 161, and so on. 
+
+Remarks:
+a or b might be [] (all languages except R, Shell).
+a or b might be nil or null or None or nothing (except in Haskell, Elixir, C++, Rust, R, Shell, PureScript).
+If a or b are nil (or null or None), the problem doesn't make sense so return false.
+
+Note for C:
+The two arrays have the same size (> 0) given as parameter in function comp.
+
+#### Solution
+
+```js
+function comp(arr1, arr2){
+  if(!arr1 || !arr2) return false;
+  
+  for(let i = 0; i < arr1.length; i++) {
+    let index = arr2.indexOf(arr1[i] * arr1[i]);
+    if(index !== -1) arr2.splice(index, 1);
+    else return false;
+  }
+  
+  return true;
+} 
 ```
 
 ## [7kyu](#katas)
