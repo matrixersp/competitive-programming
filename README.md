@@ -12,6 +12,8 @@
   - [What's a Perfect Power anyway?](#whats-a-perfect-power-anyway)
   - [RGB To Hex Conversion](#rgb-to-hex-conversion)
   - [Convert A Hex String To RGB](#convert-a-hex-string-to-rgb)
+  - [Calculating with Functions](#calculating-with-functions)
+
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
   - [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
@@ -362,6 +364,105 @@ function hexStringToRGB(hexString) {
 }
 ```
 
+### [Calculating with Functions](#katas)
+
+This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+```
+seven(times(five())); // must return 35
+four(plus(nine())); // must return 13
+eight(minus(three())); // must return 5
+six(dividedBy(two())); // must return 3
+```
+Requirements:
+
+- There must be a function for each number from 0 ("zero") to 9 ("nine")
+- There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy (divided_by in Ruby and Python)
+- Each calculation consist of exactly one operation and two numbers
+- The most outer function represents the left operand, the most inner function represents the right operand
+- Divison should be integer division. For example, this should return 2, not 2.666666...:
+```
+eight(dividedBy(three()));
+```
+
+#### Solution
+
+```js
+function zero(o) {
+  if(o) return calc(0, o.b, o.op);
+  return 0;
+}
+
+function one(o) {
+  if(o) return calc(1, o.b, o.op);
+  return 1;
+}
+
+function two(o) {
+  if(o) return calc(2, o.b, o.op);
+  return 2;
+}
+
+function three(o) {
+  if(o) return calc(3, o.b, o.op);
+  return 3;
+}
+
+function four(o) {
+  if(o) return calc(4, o.b, o.op);
+  return 4;
+}
+
+function five(o) {
+  if(o) return calc(5, o.b, o.op);
+  return 5;
+}
+
+function six(o) {
+  if(o) return calc(6, o.b, o.op);
+  return 6;
+}
+
+function seven(o) {
+  if(o) return calc(7, o.b, o.op);
+  return 7;
+}
+
+function eight(o) {
+  if(o) return calc(8, o.b, o.op);
+  return 8;
+}
+
+function nine(o) {
+  if(o) return calc(9, o.b, o.op);
+  return 9;
+}
+
+function plus(b) {
+  return {op: '+', b}
+}
+
+function minus(b) {
+  return {op: '-', b}
+}
+
+function times(b) {
+  return {op: '*', b}
+}
+
+function dividedBy(b) {
+  return {op: '/', b}
+}
+
+function calc(a, b, op) {
+  switch(op) {
+    case '+': return Math.floor(a + b);
+    case '-': return Math.floor(a - b);
+    case '*': return Math.floor(a * b);
+    case '/': return Math.floor(a / b);
+  }
+}
+```
 
 ## [6kyu](#katas)
 
