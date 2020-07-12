@@ -32,6 +32,7 @@
   - [Are they the "same"?](#are-they-the-"same"?)
   - [Counting Duplicates](#counting-duplicates)
   - [Equal Sides of an Array](#equal-sides-of-an-array)
+  - [Meeting](#meeting)
 
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
@@ -997,6 +998,33 @@ function findEvenIndex(arr) {
   }
 
   return -1;
+}
+```
+
+### [Meeting](#katas)
+
+John has invited some friends. His list is:
+```
+s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+```
+Could you make a program that
+
+- makes this string uppercase
+- gives it sorted in alphabetical order by last name.
+
+When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma.
+
+So the result of function `meeting(s)` will be:
+```
+"(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
+```
+It can happen that in two distinct families with the same family name two people have the same first name too.
+
+#### Solution
+
+```js
+function meeting(s) {
+  return s.toUpperCase().split(';').map(name => name.replace(/(\w+):(\w+)/, '($2, $1)')).sort().join('');
 }
 ```
 
