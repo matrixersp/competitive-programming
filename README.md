@@ -33,6 +33,7 @@
   - [Counting Duplicates](#counting-duplicates)
   - [Equal Sides of an Array](#equal-sides-of-an-array)
   - [Meeting](#meeting)
+  - [Find the odd int](#find-the-odd-int)
 
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
@@ -1025,6 +1026,24 @@ It can happen that in two distinct families with the same family name two people
 ```js
 function meeting(s) {
   return s.toUpperCase().split(';').map(name => name.replace(/(\w+):(\w+)/, '($2, $1)')).sort().join('');
+}
+```
+
+### [Find the odd int](#katas)
+Given an array, find the integer that appears an odd number of times.
+
+There will always be only one integer that appears an odd number of times.
+
+#### Solution
+```js
+function findOdd(arr) {
+  for(let i = 0; i < arr.length; i++){
+    let count = 0;
+    for(let j = 0; j < arr.length; j++){
+      if(arr[i] === arr[j]) count++;  
+    }
+    if(count %2 !== 0) return arr[i]
+  }
 }
 ```
 
