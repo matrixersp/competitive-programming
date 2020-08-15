@@ -51,6 +51,7 @@
   - [Find min and max](#find-min-and-max)
   - [Sum even numbers](#sum-even-numbers)
   - [Round up to the next multiple of 5](#round-up-to-the-next-multiple-of-5)
+  - [Running out of space](#running-out-of-space)
 
 ## [4kyu](#katas)
 
@@ -1427,5 +1428,20 @@ function roundToNext5(n){
   if((n + 2) % 5 === 0) return n + 2;
   if((n + 3) % 5 === 0) return n + 3;
   if((n + 4) % 5 === 0) return n + 4;
+}
+```
+
+### [Running out of space](#katas)
+
+Kevin is noticing his space run out! Write a function that removes the spaces from the values and returns an array showing the space decreasing. For example, running this function on the array ['i', 'have','no','space'] would produce ['i','ihave','ihaveno','ihavenospace'].
+
+#### Solution
+
+```js
+function spacey(arr){
+  for(let i = 1; i < arr.length; i++)
+    arr[i] = arr[i - 1] + arr[i];
+  
+  return arr;
 }
 ```
