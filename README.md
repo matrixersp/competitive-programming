@@ -13,6 +13,7 @@
   - [RGB To Hex Conversion](#rgb-to-hex-conversion)
   - [Convert A Hex String To RGB](#convert-a-hex-string-to-rgb)
   - [Calculating with Functions](#calculating-with-functions)
+  - [Valid Parentheses](#valid-parentheses)
 
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
@@ -465,6 +466,39 @@ function calc(a, b, op) {
     case '*': return Math.floor(a * b);
     case '/': return Math.floor(a / b);
   }
+}
+```
+
+### [Valid Parentheses](#katas)
+
+Write a function called that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
+
+Examples:
+
+```
+"()"              =>  true
+")(()))"          =>  false
+"("               =>  false
+"(())((()())())"  =>  true
+```
+
+Constraints:
+
+`0 <= input.length <= 100`
+
+#### Solution
+
+```js
+function validParentheses(p){
+  let sum = 0;
+  
+  for(let i = 0; i < p.length; i++) {
+    if(p[i] === ")") sum--;
+    if(p[i] === "(") sum++;
+    if(sum < 0) return false;
+  }
+  if(sum > 0) return false;
+  return true;
 }
 ```
 
