@@ -36,6 +36,7 @@
   - [Meeting](#meeting)
   - [Find the odd int](#find-the-odd-int)
   - [Find the Parity Outlier](#find-the-parity-outlier)
+  - [Who likes this?](#who-likes-this)
 
 - [7kyu](#7kyu)
   - [Drying Potatoes](#drying-potatoes)
@@ -1104,6 +1105,35 @@ function findOutlier(x){
   if(x[0] % 2 && x[1] % 2 || x[0] % 2 && x[2] % 2 || x[1] % 2 && x[2] % 2)
     return x.find(num => !(num % 2));
   return x.find(num => num % 2);
+}
+```
+
+### [Who likes this?](#katas)
+
+You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+
+Implement a function `likes :: [String] -> String`, which must take in input array, containing the names of people who like an item. It must return the display text as shown in the examples:
+
+```
+likes [] -- must be "no one likes this"
+likes ["Peter"] -- must be "Peter likes this"
+likes ["Jacob", "Alex"] -- must be "Jacob and Alex like this"
+likes ["Max", "John", "Mark"] -- must be "Max, John and Mark like this"
+likes ["Alex", "Jacob", "Mark", "Max"] -- must be "Alex, Jacob and 2 others like this"
+```
+
+For 4 or more names, the number in and 2 others simply increases.
+
+#### Solution
+
+```js
+function likes(n) {
+  let len = n.length;
+  if(len === 0) return 'no one likes this';
+  if(len === 1) return `${n[0]} likes this`;
+  if(len === 2) return `${n[0]} and ${n[1]} like this`;
+  if(len === 3) return `${n[0]}, ${n[1]} and ${n[2]} like this`;
+  if(len >= 4) return `${n[0]}, ${n[1]} and ${len - 2} others like this`;
 }
 ```
 
