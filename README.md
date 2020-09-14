@@ -15,6 +15,7 @@
   - [Calculating with Functions](#calculating-with-functions)
   - [Valid Parentheses](#valid-parentheses)
   - [Rot13](#rot13)
+  - [ISBN-10 Validation](#isbn-10-validation)
 
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
@@ -528,6 +529,38 @@ function rot13(m) {
   }
 
   return cipher;
+}
+```
+
+### [ISBN-10 Validation](#katas)
+
+ISBN-10 identifiers are ten digits. The first nine digits are on the range 0 to 9. The last digit can be either on the range 0 to 9 or the letter 'X' used to indicate a value of 10.
+
+For an ISBN-10 to be valid, the sum of the digits multiplied by their position has to equal zero modulo 11. For example, the ISBN-10: 1112223339 is valid because:
+
+```
+(((1*1)+(1*2)+(1*3)+(2*4)+(2*5)+(2*6)+(3*7)+(3*8)+(3*9)+(9*10)) % 11) == 0
+```
+Complete the validISBN10() function.
+
+```
+validISBN10('1112223339') ; should return true
+validISBN10('1234554321') ; should return true
+validISBN10('1234512345') ; should return false
+```
+
+#### Solution
+
+```js
+function validISBN10(isbn) {
+  let sum = 0;
+
+  for(let i = 0; i < isbn.length - 1; i++) {
+    sum += (i + 1) * isbn[i];
+  }
+  sum += (isbn[isbn.length - 1] === 'X') ? 10 * 10 : 10 * isbn[isbn.length - 1];
+  
+  return sum % 11 === 0; 
 }
 ```
 
