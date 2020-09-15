@@ -17,6 +17,7 @@
   - [Rot13](#rot13)
   - [ISBN-10 Validation](#isbn-10-validation)
   - [Count IP Addresses](#count-ip-addresses)
+  - [Human Readable Time](#human-readable-time)
 
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
@@ -591,6 +592,29 @@ function ipsBetween(start, end){
   }
   
   return sum;
+}
+```
+
+### [Human Readable Time](#katas)
+
+Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
+
+`HH` = hours, padded to 2 digits, range: 00 - 99
+`MM` = minutes, padded to 2 digits, range: 00 - 59
+`SS` = seconds, padded to 2 digits, range: 00 - 59
+The maximum time never exceeds 359999 (`99:59:59`)
+
+You can find some examples in the test fixtures.
+
+#### Solution
+
+```js
+function humanReadable(seconds) {
+  let h = parseInt(seconds / 3600).toString();
+  let m = parseInt((seconds % 3600) / 60).toString();
+  let s = parseInt((seconds % 3600) % 60).toString();
+  
+  return `${h.padStart(2, '0')}:${m.padStart(2, '0')}:${s.padStart(2, '0')}`;
 }
 ```
 
