@@ -16,6 +16,7 @@
   - [Valid Parentheses](#valid-parentheses)
   - [Rot13](#rot13)
   - [ISBN-10 Validation](#isbn-10-validation)
+  - [Count IP Addresses](#count-ip-addresses)
 
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
@@ -561,6 +562,35 @@ function validISBN10(isbn) {
   sum += (isbn[isbn.length - 1] === 'X') ? 10 * 10 : 10 * isbn[isbn.length - 1];
   
   return sum % 11 === 0; 
+}
+```
+
+### [Count IP Addresses](#katas)
+
+Implement a function that receives two IPv4 addresses, and returns the number of addresses between them (including the first one, excluding the last one).
+
+All inputs will be valid IPv4 addresses in the form of strings. The last address will always be greater than the first one.
+
+Examples: 
+```
+ipsBetween("10.0.0.0", "10.0.0.50")  ===   50 
+ipsBetween("10.0.0.0", "10.0.1.0")   ===  256 
+ipsBetween("20.0.0.10", "20.0.1.0")  ===  246
+```
+
+#### Solution
+
+```js
+function ipsBetween(start, end){
+  let s = start.split('.');
+  let e = end.split('.');
+  let sum = 0;
+  
+  for(let i = 0; i < s.length; i++) {
+    sum += (e[i] - s[i]) * Math.pow(256, s.length - (i + 1));
+  }
+  
+  return sum;
 }
 ```
 
