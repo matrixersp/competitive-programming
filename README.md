@@ -20,6 +20,7 @@
   - [Human Readable Time](#human-readable-time)
   - [int32 to IPv4](#int32-to-ipv4)
   - [Directions Reduction](#directions-reduction)
+  - [Simple Pig Latin](#simple-pig-latin)
 
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
@@ -737,6 +738,24 @@ function dirReduc(arr) {
   }
 
   return arr;
+}
+```
+
+### [Simple Pig Latin](#katas)
+
+Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+**Examples**
+```
+pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+pigIt('Hello world !');     // elloHay orldway !
+```
+
+#### Solution
+
+```js
+function pigIt(str){
+  return str.replace(/(\w){1}(\w+)?/g, '$2$1ay');
 }
 ```
 
