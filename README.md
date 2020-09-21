@@ -22,6 +22,7 @@
   - [Directions Reduction](#directions-reduction)
   - [Simple Pig Latin](#simple-pig-latin)
   - [Weight for Weight](#weight-for-weight)
+  - [Moving Zeros to the End](#moving-zeros-to-the-end)
 
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
@@ -792,6 +793,26 @@ function orderWeight(str) {
     let x = digitSum(a), y = digitSum(b);
     return x < y || x === y && a === [a, b].sort()[0] ? -1 : 1;
   }).join(' ');
+}
+```
+### [Moving Zeros to the End](#katas)
+
+Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+```
+moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+```
+
+#### Solution
+
+```js
+var moveZeros = function (arr) {
+  let arr2 = [], count = 0;
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] !== 0) arr2.push(arr[i]);
+    else count++;
+  }
+  return arr2.concat(Array(count).fill(0));
 }
 ```
 
