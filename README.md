@@ -23,6 +23,7 @@
   - [Simple Pig Latin](#simple-pig-latin)
   - [Weight for Weight](#weight-for-weight)
   - [Moving Zeros to the End](#moving-zeros-to-the-end)
+  - [Regex Password Validation](#regex-password-validation)
 
 - [6kyu](#6kyu)
   - [Numericals of a String](#numericals-of-a-string)
@@ -813,6 +814,25 @@ var moveZeros = function (arr) {
     else count++;
   }
   return arr2.concat(Array(count).fill(0));
+}
+```
+
+### [Regex Password Validation](#katas)
+
+You need to write regex that will validate a password to make sure it meets the following criteria:
+
+- At least six characters long
+- contains a lowercase letter
+- contains an uppercase letter
+- contains a number
+
+Valid passwords will only be alphanumeric characters.
+
+#### Solution
+
+```js
+function validate(password) {
+  return /(?!^[0-9]*$)(?!^[A-Za-z]*$)(?!^[A-Z0-9]*$)(?!^[a-z0-9]*$)^([a-zA-Z0-9]{6,})$/.test(password);
 }
 ```
 
