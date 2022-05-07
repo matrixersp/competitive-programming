@@ -1,6 +1,6 @@
 # Codewars Kata Solutions on JavaScript
 ## Katas
-### 4kyu
+### [4kyu](#katas)
 
 <details>
  <summary><strong>Next bigger number with the same digits</strong> (click to show)</summary>
@@ -72,7 +72,7 @@ function findNextBiggerDigit(str, i) {
 
 </details>
 
-### 5kyu
+### [5kyu](#katas)
 
 <details>
 <summary><strong>Did you mean ...?</strong> (click to show)</summary>
@@ -834,7 +834,7 @@ function validate(password) {
 
 </details>
 
-### 6kyu
+### [6kyu](#katas)
 
 <details>
 <summary><strong>Numericals of a String</strong> (click to show)</summary>
@@ -1570,7 +1570,7 @@ function beggars(values, n){
 
 </details>
 
-### 7kyu
+### [7kyu](#katas)
 
 <details>
 <summary><strong>Drying Potatoes</strong> (click to show)</summary>
