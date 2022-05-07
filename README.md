@@ -1,4 +1,4 @@
-# Codewars Kata Solutions on JavaScript
+# Codewars Kata Solutions in JavaScript
 ## Katas
 ### [4kyu](#katas)
 
