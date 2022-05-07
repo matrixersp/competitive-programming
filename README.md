@@ -1,75 +1,10 @@
 # Codewars Kata Solutions on JavaScript
-
 ## Katas
-
-- [4kyu](#4kyu)
-  - [Next bigger number with the same digits](#next-bigger-number-with-the-same-digits)
-- [5kyu](#5kyu)
-  - [Did you mean ...?](#did-you-mean-)
-  - [Perimeter of squares in a rectangle](#Perimeter-of-squares-in-a-rectangle)
-  - [flatten()](#flatten)
-  - [First non-repeating character](#first-non-repeating-character)
-  - [What's a Perfect Power anyway?](#whats-a-perfect-power-anyway)
-  - [RGB To Hex Conversion](#rgb-to-hex-conversion)
-  - [Convert A Hex String To RGB](#convert-a-hex-string-to-rgb)
-  - [Calculating with Functions](#calculating-with-functions)
-  - [Valid Parentheses](#valid-parentheses)
-  - [Rot13](#rot13)
-  - [ISBN-10 Validation](#isbn-10-validation)
-  - [Count IP Addresses](#count-ip-addresses)
-  - [Human Readable Time](#human-readable-time)
-  - [int32 to IPv4](#int32-to-ipv4)
-  - [Directions Reduction](#directions-reduction)
-  - [Simple Pig Latin](#simple-pig-latin)
-  - [Weight for Weight](#weight-for-weight)
-  - [Moving Zeros to the End](#moving-zeros-to-the-end)
-  - [Regex Password Validation](#regex-password-validation)
-
-- [6kyu](#6kyu)
-  - [Numericals of a String](#numericals-of-a-string)
-  - [Tic-Tac-Toe-like table Generator](#tic-tac-toe-like-table-generator)
-  - [Highest Scoring Word](#highest-scoring-word)
-  - [CamelCase Method](#camelcase-method)
-  - [Unique In Order](#unique-in-order)
-  - [Evil Autocorrect Prank](#evil-autocorrect-prank)
-  - [The Vowel Code](#the-vowel-code)
-  - [Simple Time Difference](#simple-time-difference)
-  - [Character with longest consecutive repetition](#character-with-longest-consecutive-repetition)
-  - [Encrypt this!](#encrypt-this)
-  - [Find within array](#find-within-array)
-  - [Delete occurrences of an element if it occurs more than n times](#delete-occurrences-of-an-element-)
-  - [I need more speed!](#i-need-more-speed)
-  - [Break camelCase](#break-camelcase)
-  - [Are they the "same"?](#are-they-the-"same"?)
-  - [Counting Duplicates](#counting-duplicates)
-  - [Equal Sides of an Array](#equal-sides-of-an-array)
-  - [Meeting](#meeting)
-  - [Find the odd int](#find-the-odd-int)
-  - [Find the Parity Outlier](#find-the-parity-outlier)
-  - [Who likes this?](#who-likes-this)
-  - [English beggars](#english-beggars)
-
-- [7kyu](#7kyu)
-  - [Drying Potatoes](#drying-potatoes)
-  - [Sum of Odd Numbers](#sum-of-odd-numbers)
-  - [VAPORCODE](#vaporcode)
-  - [The First Non Repeated Character In A String](#the-first-non-repeated-character-in-a-string)
-  - [Fun with lists: length](#fun-with-lists-length)
-  - [Sort the Gift Code](#sort-the-gift-code)
-  - [My Languages](#my-languages)
-  - [Largest 5 digit number in a series](#largest-5-digit-number-in-a-series)
-  - [Greet Me](#greet-me)
-  - [Halving Sum](#halving-sum)
-  - [The reject() function](#the-reject-function)
-  - [Largest pair sum in array](#largest-pair-sum-in-array)
-  - [Find min and max](#find-min-and-max)
-  - [Sum even numbers](#sum-even-numbers)
-  - [Round up to the next multiple of 5](#round-up-to-the-next-multiple-of-5)
-  - [Running out of space](#running-out-of-space)
-
 ## [4kyu](#katas)
 
-### [Next bigger number with the same digits](#katas)
+<details>
+ <summary><strong>Next bigger number with the same digits</strong> (click to show)</summary>
+
 Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example:
 
 ```
@@ -135,9 +70,13 @@ function findNextBiggerDigit(str, i) {
 }
 ```
 
+</details>
+
 ## [5kyu](#katas)
 
-### [Did you mean ...?](#katas)
+<details>
+<summary><strong>Did you mean ...?</strong> (click to show)</summary>
+
 
 I'm sure, you know Google's "Did you mean ...?", when you entered a search term and mistyped a word. In this kata we want to implement something similar.
 
@@ -199,7 +138,10 @@ Dictionary.prototype.findMostSimilar = function (term) {
 };
 ```
 
-### [Perimeter of squares in a rectangle](#katas)
+</details>
+
+<details>
+<summary><strong>Perimeter of squares in a rectangle</strong> (click to show)</summary>
 
 The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 _ (1 + 1 + 2 + 3 + 5 + 8) = 4 _ 20 = 80
 
@@ -233,7 +175,10 @@ function perimeter(n) {
 }
 ```
 
-### [flatten()](#katas)
+</details>
+
+<details>
+<summary><strong>flatten()</strong> (click to show)</summary>
 
 For this exercise you will create a global flatten method. The method takes in any number of arguments and flattens them into a single array. If any of the arguments passed in are an array then the individual objects within the array will be flattened so that they exist at the same level as the other arguments. Any nested arrays, no matter how deep, should be flattened into the single array result.
 
@@ -265,7 +210,10 @@ function flatten(...args) {
 }
 ```
 
-### [First non-repeating character](#katas)
+</details>
+
+<details>
+<summary><strong>First non-repeating character</strong> (click to show)</summary>
 
 Write a function named `first_non_repeating_letter` that takes a string input, and returns the first character that is not repeated anywhere in the string.
 
@@ -288,7 +236,10 @@ function firstNonRepeatingLetter(s) {
 }
 ```
 
-### [What's a Perfect Power anyway?](#katas)
+</details>
+
+<details>
+<summary><strong>What's a Perfect Power anyway?</strong> (click to show)</summary>
 
 A [perfect power](https://en.wikipedia.org/wiki/Perfect_power) is a classification of positive integers:
 
@@ -326,7 +277,10 @@ function isPP(n) {
 }
 ```
 
-### [RGB To Hex Conversion](#katas)
+</details>
+
+<details>
+<summary><strong>RGB To Hex Conversion</strong> (click to show)</summary>
 
 The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
 
@@ -354,7 +308,10 @@ function rgb(r, g, b) {
 }
 ```
 
-### [Convert a hex string to RGB](#katas)
+</details>
+
+<details>
+<summary><strong>Convert a hex string to RGB</strong> (click to show)</summary>
 
 When working with color values it can sometimes be useful to extract the individual red, green, and blue (RGB) component values for a color. Implement a function that meets these requirements:
 
@@ -381,7 +338,10 @@ function hexStringToRGB(hexString) {
 }
 ```
 
-### [Calculating with Functions](#katas)
+</details>
+
+<details>
+<summary><strong>Calculating with Functions</strong> (click to show)</summary>
 
 This time we want to write calculations using functions and get the results. Let's have a look at some examples:
 
@@ -481,7 +441,10 @@ function calc(a, b, op) {
 }
 ```
 
-### [Valid Parentheses](#katas)
+</details>
+
+<details>
+<summary><strong>Valid Parentheses</strong> (click to show)</summary>
 
 Write a function called that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
 
@@ -514,7 +477,10 @@ function validParentheses(p){
 }
 ```
 
-### [Rot13](#katas)
+</details>
+
+<details>
+<summary><strong>Rot13</strong> (click to show)</summary>
 
 ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet. ROT13 is an example of the Caesar cipher.
 
@@ -540,7 +506,11 @@ function rot13(m) {
 }
 ```
 
-### [ISBN-10 Validation](#katas)
+</details>
+
+
+<details>
+<summary><strong>ISBN-10 Validation</strong> (click to show)</summary>
 
 ISBN-10 identifiers are ten digits. The first nine digits are on the range 0 to 9. The last digit can be either on the range 0 to 9 or the letter 'X' used to indicate a value of 10.
 
@@ -572,7 +542,10 @@ function validISBN10(isbn) {
 }
 ```
 
-### [Count IP Addresses](#katas)
+</details>
+
+<details>
+<summary><strong>Count IP Addresses</strong> (click to show)</summary>
 
 Implement a function that receives two IPv4 addresses, and returns the number of addresses between them (including the first one, excluding the last one).
 
@@ -601,7 +574,10 @@ function ipsBetween(start, end){
 }
 ```
 
-### [Human Readable Time](#katas)
+</details>
+
+<details>
+<summary><strong>Human Readable Time</strong> (click to show)</summary>
 
 Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
 
@@ -624,7 +600,11 @@ function humanReadable(seconds) {
 }
 ```
 
-### [int32 to IPv4](#katas)
+</details>
+
+<details>
+<summary><strong>int32 to IPv4</strong> (click to show)</summary>
+
 Take the following IPv4 address: 128.32.10.1
 
 This address has 4 octets where each octet is a single byte (or 8 bits).
@@ -660,7 +640,10 @@ function int32ToIp(int32){
 }
 ```
 
-### [Directions Reduction](#katas)
+</details>
+
+<details>
+<summary><strong>Directions Reduction</strong> (click to show)</summary>
 
 **Once upon a time, on a way through the old wild mountainous west,…**
 
@@ -744,7 +727,10 @@ function dirReduc(arr) {
 }
 ```
 
-### [Simple Pig Latin](#katas)
+</details>
+
+<details>
+<summary><strong>Simple Pig Latin</strong> (click to show)</summary>
 
 Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
 
@@ -762,7 +748,10 @@ function pigIt(str){
 }
 ```
 
-### [Weight for Weight](#katas)
+</details>
+
+<details>
+<summary><strong>Weight for Weight</strong> (click to show)</summary>
 
 My friend John and I are members of the "Fat to Fit Club (FFC)". John is worried because each month a list with the weights of members is published and each month he is the last on the list which means he is the heaviest.
 
@@ -796,7 +785,11 @@ function orderWeight(str) {
   }).join(' ');
 }
 ```
-### [Moving Zeros to the End](#katas)
+
+</details>
+
+<details>
+<summary><strong>Moving Zeros to the End</strong> (click to show)</summary>
 
 Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
 
@@ -817,7 +810,10 @@ var moveZeros = function (arr) {
 }
 ```
 
-### [Regex Password Validation](#katas)
+</details>
+
+<details>
+<summary><strong>Regex Password Validation</strong> (click to show)</summary>
 
 You need to write regex that will validate a password to make sure it meets the following criteria:
 
@@ -836,9 +832,12 @@ function validate(password) {
 }
 ```
 
+</details>
+
 ## [6kyu](#katas)
 
-### [Numericals of a String](#katas)
+<details>
+<summary><strong>Numericals of a String</strong> (click to show)</summary>
 
 You are given an input string.
 
@@ -875,7 +874,10 @@ function numericals(s) {
 }
 ```
 
-### [Tic-Tac-Toe-like table Generator](#katas)
+</details>
+
+<details>
+<summary><strong>Tic-Tac-Toe-like table Generator</strong> (click to show)</summary>
 
 Do you have in mind the good old TicTacToe?
 
@@ -922,7 +924,10 @@ function displayBoard(board, width) {
 }
 ```
 
-### [Highest Scoring Word](#katas)
+</details>
+
+<details>
+<summary><strong>Highest Scoring Word</strong> (click to show)</summary>
 
 Given a string of words, you need to find the highest scoring word.
 
@@ -952,7 +957,10 @@ function high(x) {
 }
 ```
 
-### [CamelCase Method](#katas)
+</details>
+
+<details>
+<summary><strong>CamelCase Method</strong> (click to show)</summary>
 
 Write simple .camelCase method (camel_case function in PHP, CamelCase in C# or camelCase in Java) for strings. All words must have their first letter capitalized without spaces.
 
@@ -973,7 +981,10 @@ String.prototype.camelCase = function () {
 };
 ```
 
-### [Unique In Order](#katas)
+</details>
+
+<details>
+<summary><strong>Unique In Order</strong> (click to show)</summary>
 
 Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
 
@@ -994,7 +1005,10 @@ var uniqueInOrder = function (iterable) {
 };
 ```
 
-### [Evil Autocorrect Prank](#katas)
+</details>
+
+<details>
+<summary><strong>Evil Autocorrect Prank</strong> (click to show)</summary>
 
 Your friend won't stop texting his girlfriend. It's all he does. All day. Seriously. The texts are so mushy too! The whole situation just makes you feel ill. Being the wonderful friend that you are, you hatch an evil plot. While he's sleeping, you take his phone and change the autocorrect options so that every time he types "you" or "u" it gets changed to "your sister."
 
@@ -1018,7 +1032,10 @@ function autocorrect(input) {
 }
 ```
 
-### [The Vowel Code](#katas)
+</details>
+
+<details>
+<summary><strong>The Vowel Code</strong> (click to show)</summary>
 
 Step 1: Create a function called encode() to replace all the lowercase vowels in a given string with numbers according to the following pattern:
 
@@ -1057,7 +1074,10 @@ function decode(string) {
 }
 ```
 
-### [Simple Time Difference](#katas)
+</details>
+
+<details>
+<summary><strong>Simple Time Difference</strong> (click to show)</summary>
 
 In this Kata, you will be given a series of times at which an alarm goes off. Your task will be to determine the maximum time interval between alarms. Each alarm starts ringing at the beginning of the corresponding minute and rings for exactly one minute. The times in the array are not in chronological order. Ignore duplicate times, if any.
 
@@ -1107,7 +1127,10 @@ function solve(arr) {
 }
 ```
 
-### [Character with longest consecutive repetition](#katas)
+</details>
+
+<details>
+<summary><strong>Character with longest consecutive repetition</strong> (click to show)</summary>
 
 For a given string `s` find the character `c` (or `C`) with longest consecutive repetition and return:
 
@@ -1136,7 +1159,10 @@ function longestRepetition(s) {
 }
 ```
 
-### [Encrypt this!](#katas)
+</details>
+
+<details>
+<summary><strong>Encrypt this!</strong> (click to show)</summary>
 
 Description:
 
@@ -1169,7 +1195,10 @@ var encryptThis = function (text) {
 }
 ```
 
-### [Find within array](#katas)
+</details>
+
+<details>
+<summary><strong>Find within array</strong> (click to show)</summary>
 
 We'll create a function that takes in two parameters:
 
@@ -1199,7 +1228,11 @@ var findInArray = function(arr, iterator) {
 };
 ```
 
-### [Delete occurrences of an element if it occurs more than n times](#katas)
+</details>
+
+<details>
+<summary><strong>Delete occurrences of an element if it occurs more than n times</strong> (click to show)</summary>
+
 Enough is enough!
 
 Alice and Bob were on a holiday. Both of them took many pictures of the places they've been, and now they want to show Charlie their entire collection. However, Charlie doesn't like this sessions, since the motive usually repeats. He isn't fond of seeing the Eiffel tower 40 times. He tells them that he will only sit during the session if they show the same motive at most N times. Luckily, Alice and Bob are able to encode the motive as a number. Can you help them to remove numbers such that their list contains each number only up to N times, without changing the order?
@@ -1234,7 +1267,10 @@ function deleteNth(arr,n){
 }
 ```
 
-### [I need more speed!](#katas)
+</details>
+
+<details>
+<summary><strong>I need more speed!</strong> (click to show)</summary>
 
 Write a function that will take in any array and reverse it.
 
@@ -1258,7 +1294,11 @@ function reverse(arr) {
    }
 }
 ```
-### [Break camelCase](#katas)
+
+</details>
+
+<details>
+<summary><strong>Break camelCase</strong> (click to show)</summary>
 
 Complete the solution so that the function will break up camel casing, using a space between words.
 
@@ -1276,7 +1316,11 @@ function solution(string) {
 
 ```
 
-### [Are they the "same"?](#katas)
+</details>
+
+<details>
+<summary><strong>Are they the "same"?</strong> (click to show)</summary>
+
 Given two arrays a and b write a function comp(a, b) (compSame(a, b) in Clojure) that checks whether the two arrays have the "same" elements, with the same multiplicities. "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
 
 Examples:
@@ -1310,7 +1354,11 @@ function comp(arr1, arr2){
 } 
 ```
 
-### [Counting Duplicates](#katas)
+</details>
+
+<details>
+<summary><strong>Counting Duplicates</strong> (click to show)</summary>
+
 Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
 
 Example:  
@@ -1336,7 +1384,11 @@ function duplicateCount(text){
 }
 ```
 
-### [Equal Sides of an Array](#katas)
+</details>
+
+<details>
+<summary><strong>Equal Sides of an Array</strong> (click to show)</summary>
+
 You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N. If there is no index that would make this happen, return -1.
 
 For example:
@@ -1372,7 +1424,10 @@ function findEvenIndex(arr) {
 }
 ```
 
-### [Meeting](#katas)
+</details>
+
+<details>
+<summary><strong>Meeting</strong> (click to show)</summary>
 
 John has invited some friends. His list is:
 ```
@@ -1399,7 +1454,11 @@ function meeting(s) {
 }
 ```
 
-### [Find the odd int](#katas)
+</details>
+
+<details>
+<summary><strong>Find the odd int</strong> (click to show)</summary>
+
 Given an array, find the integer that appears an odd number of times.
 
 There will always be only one integer that appears an odd number of times.
@@ -1417,7 +1476,10 @@ function findOdd(arr) {
 }
 ```
 
-### [Find the Parity Outlier](#katas)
+</details>
+
+<details>
+<summary><strong>Find the Parity Outlier</strong> (click to show)</summary>
 
 You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
 
@@ -1441,7 +1503,10 @@ function findOutlier(x){
 }
 ```
 
-### [Who likes this?](#katas)
+</details>
+
+<details>
+<summary><strong>Who likes this?</strong> (click to show)</summary>
 
 You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
 
@@ -1470,7 +1535,10 @@ function likes(n) {
 }
 ```
 
-### [English beggars](#katas)
+</details>
+
+<details>
+<summary><strong>English beggars</strong> (click to show)</summary>
 
 Born a misinterpretation of [this kata](https://www.codewars.com/kata/simple-fun-number-334-two-beggars-and-gold/), your task here is pretty simple: given an array of values and an amount of beggars, you are supposed to return an array with the sum of what each beggar brings home, assuming they all take regular turns, from the first to the last.
 
@@ -1500,9 +1568,12 @@ function beggars(values, n){
 }
 ```
 
+</details>
+
 ## [7kyu](#katas)
 
-### [Drying Potatoes](#katas)
+<details>
+<summary><strong>Drying Potatoes</strong> (click to show)</summary>
 
 All we eat is water and dry matter.
 
@@ -1540,7 +1611,10 @@ function potatoes(p0, w0, p1) {
 }
 ```
 
-### [Sum of Odd Numbers](#katas)
+</details>
+
+<details>
+<summary><strong>Sum of Odd Numbers</strong> (click to show)</summary>
 
 Given the triangle of consecutive odd numbers:
 
@@ -1568,7 +1642,10 @@ function rowSumOddNumbers(n) {
 }
 ```
 
-### [VAPORCODE](#katas)
+</details>
+
+<details>
+<summary><strong>VAPORCODE</strong> (click to show)</summary>
 
 ASC Week 1 Challenge 4 (Medium #1)
 
@@ -1589,7 +1666,10 @@ function vaporcode(s) {
 }
 ```
 
-### [The First Non Repeated Character In A String](#katas)
+</details>
+
+<details>
+<summary><strong>The First Non Repeated Character In A String</strong> (click to show)</summary>
 
 You need to write a function, that returns the first non-repeated character in the given string.
 
@@ -1615,7 +1695,10 @@ function firstNonRepeated(s) {
 }
 ```
 
-### [Fun with lists: length](#katas)
+</details>
+
+<details>
+<summary><strong>Fun with lists: length</strong> (click to show)</summary>
 
 Implement the method **length**, which accepts a linked list (head), and returns the length of the list.
 
@@ -1646,7 +1729,10 @@ function length(head) {
 }
 ```
 
-### [Sort the Gift Code](#katas)
+</details>
+
+<details>
+<summary><strong>Sort the Gift Code</strong> (click to show)</summary>
 
 Santa's senior gift organizer Elf developed a way to represent up to 26 gifts by assigning a unique alphabetical character to each gift. After each gift was assigned a character, the gift organizer Elf then joined the characters to form the gift ordering code.
 
@@ -1671,7 +1757,10 @@ function sortGiftCode(code) {
 }
 ```
 
-### [My Languages](#katas)
+</details>
+
+<details>
+<summary><strong>My Languages</strong> (click to show)</summary>
 
 You are given a dictionary/hash/object containing some languages and your test results in the given languages. Return the list of languages where your test score is at least `60`, in descending order of the results.
 
@@ -1696,7 +1785,11 @@ function myLanguages(langs) {
 }
 ```
 
-### [Largest 5 digit number in a series](#katas)
+</details>
+
+<details>
+<summary><strong>Largest 5 digit number in a series</strong> (click to show)</summary>
+
 In the following 6 digit number:
 
 ```
@@ -1727,8 +1820,10 @@ function solution(digits){
 }
 ```
 
+</details>
 
-### [Greet Me](#katas)
+<details>
+<summary><strong>Greet Me</strong> (click to show)</summary>
 
 Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
 
@@ -1747,7 +1842,10 @@ var greet = function (n) {
 };
 ```
 
-### [Halving Sum](#katas)
+</details>
+
+<details>
+<summary><strong>Halving Sum</strong> (click to show)</summary>
 
 Given a positive integer n, calculate the following sum:
 
@@ -1775,7 +1873,10 @@ function halvingSum(n) {
 }
 ```
 
-### [The reject() function](#katas)
+</details>
+
+<details>
+<summary><strong>The reject() function</strong> (click to show)</summary>
 
 Implement a function which filters out array values which satisfy the given predicate.
 
@@ -1789,7 +1890,11 @@ reject([1, 2, 3, 4, 5, 6], (n) => n % 2 === 0)  =>  [1, 3, 5]
 const reject = (a, p) => a.filter(v => !p(v));
 ```
 
-### [Largest pair sum in array](#katas)
+</details>
+
+<details>
+<summary><strong>Largest pair sum in array</strong> (click to show)</summary>
+
 Given a sequence of numbers, find the largest pair sum in the sequence.
 
 For example
@@ -1816,7 +1921,10 @@ function largestPairSum(numbers)
 }
 ```
 
-### [Find min and max](#katas)
+</details>
+
+<details>
+<summary><strong>Find min and max</strong> (click to show)</summary>
 
 Implement a function that returns the minimal and the maximal value of a list (in this order).
 
@@ -1834,7 +1942,12 @@ function getMinMax(arr){
   return [min, max];
 };
 ```
-### [Sum even numbers](#katas)
+
+</details>
+
+<details>
+<summary><strong>Sum even numbers</strong> (click to show)</summary>
+
 Write a function named sumEvenNumbers, taking a sequence of numbers as single parameter. Your function must return the sum of the even values of this sequence.
 
 Only numbers without decimals like 4 or 4.0 can be even.
@@ -1850,7 +1963,10 @@ function sumEvenNumbers(input) {
 }
 ```
 
-### [Round up to the next multiple of 5](#katas)
+</details>
+
+<details>
+<summary><strong>Round up to the next multiple of 5</strong> (click to show)</summary>
 
 Given an integer as input, can you round it to the next (meaning, "higher") 5?
 
@@ -1883,7 +1999,10 @@ function roundToNext5(n){
 }
 ```
 
-### [Running out of space](#katas)
+</details>
+
+<details>
+<summary><strong>Running out of space</strong> (click to show)</summary>
 
 Kevin is noticing his space run out! Write a function that removes the spaces from the values and returns an array showing the space decreasing. For example, running this function on the array ['i', 'have','no','space'] would produce ['i','ihave','ihaveno','ihavenospace'].
 
@@ -1897,3 +2016,5 @@ function spacey(arr){
   return arr;
 }
 ```
+
+</details>
